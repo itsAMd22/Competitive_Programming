@@ -6,11 +6,12 @@ void solve(){
     if(n == 1)  cout << 0;
     else if(n == 2) cout << 1;
     else{
-        n-=2;
+        n-=2; //already 2 evaluated - 0 and 1.
         long long fb1 = 0, fb2 = 1;
         while(n--){
             fb2 += fb1;
             fb1 = fb2 - fb1;
+            //new_fb1 = (old_fb2 + old_fb1) - old_fb1
         }
         cout << fb2;
     }
