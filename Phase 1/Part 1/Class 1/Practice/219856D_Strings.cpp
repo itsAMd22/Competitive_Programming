@@ -1,18 +1,14 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-
-void solve(){
-    char a[105];    cin >> a;
-    if(strlen(a) <= 10) cout << a << endl;
-    else{
-        cout << a[0] << strlen(a) - 2 << a[strlen(a)-1] << endl;
-    }    
-}
-
 int main(){
-    ios_base::sync_with_stdio(0), cin.tie(0);
-    int t=1;    cin >> t;
-    while(t--)  solve();
+    ios_base::sync_with_stdio(0); cin.tie(0);
+    char a[21], b[21];  cin >> a >> b;
+    int len_a = strlen(a), len_b = strlen(b);
+    
+    cout << len_a <<  " " << len_b << endl << a << b << endl;
+    char tmp = a[0];
+    a[0] = b[0], b[0] = tmp;
+    cout << a <<  " " << b;
     return 0;
 }

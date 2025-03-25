@@ -1,7 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-char s[10000000];
+const int N = 1e7 + 9;
+char s[N];   
 
 int main(){
     cin >> s;
