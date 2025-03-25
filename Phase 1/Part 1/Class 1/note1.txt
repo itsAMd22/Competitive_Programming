@@ -52,20 +52,26 @@
     -->> Around 10^8 operations can be done in 1s.
     -->> Preference: O(1) > O(log n) > O(n) > O(n logn) > O(n^2) > O(2^n) > O(n!)
 
+
+
+********************************************log2(n) = (ln n / ln 2)****************************************************
+
+
+
 # Space Complexity : Space complxity of an algorithm quantifies the maximum amount of space or memory taken by an
                      algorithm to run as a function of the size of the input data.
 
 ***Constant factors(exp : 100 in 100n) are ignored in TC and SC, but the code does run that amount of time (100n), not only n.
 
 
-# Subarray : Continous part of an array. (n^2 subarrays)
+# Subarray : Continous part of an array. (n*(n+1)/2 subarrays)
             Exp : {1}, {1,2}, {1,2,3} , {2,3} , {2,3,4,5} are all subarrays of {1,2,3,4,5} but {1,2,5} is not.
 # Substring : Continous part of a string.
             Exp : "a","b","c","d","ab","bc","abc","def" are substrings of "abcdef" but "abef" is not.            
 
 ***Sub-array/string of n size container count = n*(n+1)/2
 
-# Subsequence : A sequence deriived from another by deleting some(possibly none) elements without changing the order.
+# Subsequence : A sequence derived from another by deleting some(possibly none) elements without changing the order.
             Exp : {1,2,4,6} is a subsequence of {1,2,3,4,5,6,7,8,9}.
             -->> Subsequence are possible for both array and string.
 
