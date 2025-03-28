@@ -1,0 +1,102 @@
+# C++ Operator Precedence :
+
+https://en.cppreference.com/w/cpp/language/operator_precedence
+
+Post-inc/decrement > pre(R_to_L)/not(!)/tilda(~) > (*,/,%) > (+,-) > <<,>> > 
+Relational Operator(>=, <=, <=>, >, <) > Equality operator(==, !=) >  B-& > B-^ >
+B-| > L-&& > L-|| > Ternary > Assignment(=, +=,, -=, *=, /=, >>=, <<=, &=, ^=, |= -- R_to_L)
+
+# Function :
+
+1.Declaration / Function Prototype : return_type function_name(parameter1, ... , parametern);
+
+2.Definition : 
+
+return_type function_name(parameter1, ... , parametern){
+	//function body
+}
+
+3.Calling : function_name(arguement1, ... , arguementn);
+
+*** Types : 
+-> Standard Library Function(defined in their respective header files)
+-> User-defined Function : 
+	-->>Function with no argument and no return value
+	-->>Function with no argument but return value
+	-->>Function with argument but no return value
+	-->>Function with argument and return value
+
+*** Function Overloading : 
+
+Two functions can have the same name if the number and/or type 
+of argument passed is different.Based on the type of parameter 
+passed during the function call, the corresponding function is called.
+
+** EXAMPLE : 
+
+	// same name different arguments
+	int test() { }
+	int test(int a) { }
+	float test(double a) { }
+	int test(int a, double b) { }
+
+	// Error code
+	int test(int a) { }
+	double test(int b){ }
+
+*** Defaut Arguments(Paramters) :
+
+-> The 2nd(or more) argument cannot be passed without passing the 1st(or previous) arguments.
+-> Once we provide a default value for a parameter, all subsequent parameters must also have 
+   default values. For example,
+
+	// Invalid
+	void add(int a, int b = 3, int c, int d);
+
+	// Invalid
+	void add(int a, int b = 3, int c, int d = 4);
+
+	// Valid
+	void add(int a, int c, int b = 3, int d = 4);
+
+-> If we are defining the default arguments in the function definition instead of the function
+   prototype, then the function must be defined before the function call.
+
+
+# Resursion : Check 4.Recursion.cpp
+
+# Math : 
+
+	-> Integers : whole numbers (.....,-2,-1,-,1,2,....)
+	-> Postitve Integers : [1,♾️)
+	-> Negative Integers : (♾️,-1]
+	-> Non-negative Integers : [0,♾️)
+	-> Real numbers : All numbers representable in a number line.
+
+	-> Inclusive Range , [x,y]  = {x,.......,y} 
+	-> Exclusive Range, (x,y) = {x+1,..........,y-1}
+
+	-> Floor  : Largest integer <= number.           -->> floor()
+	-> Ceil  : Smallest integer >= number.           -->> ceil()
+	-> Round  : Nearest integer to the number.       -->> round()
+
+	*** ceil(a,b) = floor((a+b-1)/b) = floor((a-1)/b+1)
+
+	-> Notations : 
+
+		-->> Sigma   : ∑i = i1 + i2 + ...... + in
+		-->> Product : ∏i = i1 * i2 * ...... * in
+		-->> Compound: ∑i∑j (i.j) = ∑i(ij1 + ij2 + .... + ijn)
+		//if compound, break it down.
+
+	
+	-> Sum formulas :
+
+		-->> (1+2+3+ ..... +n) = n*(n+1)/2
+		-->> (1+3+5+ ..... +(2n-1)) = n^2
+		-->> (2+4+6+ ..... +2*n) = n*(n+1)
+		-->> ∑(i^2) = n*(n+1)*(2*n+1)/6
+		-->> ∑(i^3) = (n*(n+1)/2)^2
+		-->> ∑(ki), multiples of k = k*(k*(k+1)/2)
+		-->> ∑i - ∑(ik), not multiples of k = (n*(n+1)/2) - (k*(k*(k+1)/2))
+
