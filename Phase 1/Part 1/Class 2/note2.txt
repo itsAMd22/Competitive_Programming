@@ -106,15 +106,15 @@ passed during the function call, the corresponding function is called.
 		-->> Arithmatic : Common difference , d = a(n) - a(n-1)
 			>> nth term = a1 + (n-1)*d
 			>> sum till nth term    = ∑(a1 + (i-1)*d) 
-									= ∑a1 + ∑(i-1)*d 
-									= na + d*(∑(i) - ∑1) 
-									= na + d*n*(n+1)/2 - dn 
-									= n/2 * (2a1 + (n-1) * d)
+						= ∑a1 + ∑(i-1)*d 
+						= na + d*(∑(i) - ∑1) 
+						= na + d*n*(n+1)/2 - dn 
+						= n/2 * (2a1 + (n-1) * d)
 		-->> Geometric  : Common fraction , r = a(n) / a(n-1)
 			>> nth term = a1 * r^(n-1).
 			>> sum till nth term    = a1(r^n - 1) / (r - 1) , when 	r > 1
-									= a1(1 - r^n) / (1 - r) , when r < 1
-									= n * a1 , when r == 1
+						= a1(1 - r^n) / (1 - r) , when r < 1
+						= n * a1 , when r == 1
 	-> Counting : 
 
 		-->> Factorial : no. of ways to arrange n disctinct elements in a line.
@@ -136,7 +136,7 @@ passed during the function call, the corresponding function is called.
 		*** Natural Logarithm : e base logarithm where e = 2.71828 (approx)
 		*** no. of digits in n  = floor(log10 (n)) + 1
 		*** no. of digits in n! = floor(log10 (n!)) + 1
-								= floor(log10 (1) + log10 (2) + .... + log10 (n-1) + log10 (n)) + 1
+					= floor(log10 (1) + log10 (2) + .... + log10 (n-1) + log10 (n)) + 1
 		
 
 	-> Harmonic series : Sum of a harmonic series with n elements <= 1 + floor(log2(n))
