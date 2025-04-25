@@ -1,51 +1,29 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-#define Alhamdulillah ios_base::sync_with_stdio(0), cin.tie(0);
-#define ll long long
-#define endl '\n'
-#define db(i) cout << "c -> " << i << endl;
-#define pv(v) for(auto e : v)   cout << e << " ";   cout << endl;
-#define pm(m) for(auto [x,y] : m)   cout << x << " " << y << endl;   cout << endl;
+const int N = 1e5 + 9;
 
-ll psum[1000005];
-
-void solve(){
-    int n,k; cin >> n >> k;
-    ll a[n+1], start = 1, mn = INT_MAX;
-    
-    for(int i=1;i<=n;i++){
-        cin >> a[i];
-        if(i == 1)  psum[i] = a[i];
-        else    psum[i] = a[i] + psum[i-1];
-    }    
-
-    if(k == 1){
-        for(int i=1;i<=n;i++){
-            if(a[i] < mn){
-                mn = a[i];
-                start = i;
-            }
-        }
-        cout << start;
-        return;
-    }
-    int i;
-    for(i=1;i<=n-k;i++){
-        cout << i-1 << " " << i+k << endl;
-        // cout << psum[i-1] <<  " " << psum[i+k-1] << endl;
-        if(psum[i+k] - psum[i-1] < mn){
-            start = i;
-            mn = psum[i+k] - psum[i-1];
-        }  
-    }
-    cout << i-1 << " " << i+k << endl;
-    cout << start;
-}
-
-int main(){
-    Alhamdulillah
-    int t=1;    //cin >> t;
-    while(t--)  solve();
-    return 0;
+int a[N];
+long long prefix_sum[N];
+int main() {
+  int n; cin >> n;
+  for (int i = 1; i <= n; i++) {
+    cin >> a[i];
+  }
+  prefix_sum[0] = 0;
+  for (int i = 1; i <= n; i++) {
+    prefix_sum[i] = prefix_sum[i - 1] + a[i];
+  }
+  int q; cin >> q;
+  while (q--) {
+    int l, r; cin >> l >> r;
+    l++; r++; // 1 based indexing
+    long long sum = 0;
+    // for (int i = l; i <= r; i++) {
+    //   sum += a[i];
+    // }
+    sum = prefix_sum[r] - prefix_sum[l - 1];
+    cout << sum << '\n';
+  }
+  return 0;
 }
