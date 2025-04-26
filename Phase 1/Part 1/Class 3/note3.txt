@@ -1,0 +1,25 @@
+### The XOR Trick : 
+    1. x ⊕ 0 = x 
+    2. x ⊕ x = 0
+    3. x ⊕ y != 0 if x != y
+    4. a ⊕ (b ⊕ c) = (a ⊕ b) ⊕ c 
+    5. a ⊕ b = 0 <=> a = b 
+    6. if a ⊕ b = c => a = b ⊕ c => a ⊕ b ⊕ c = 0
+    7. a ⊕ ....... ⊕ a = 1 if no. of a is odd, 0 otherise.
+    8. Duplicated doesnt effect the result of XOR operation as
+        the cancel each other out.
+
+### Bitwise operation  : 
+
+    1. n & x <= n, bitwise-AND operation for any integer will always
+        give a number less than or equal to n. This is becase all the 
+        unset bits can never be set, only the set bit can be unset(caseing < n)
+    2. n & x >= n, bitwise-OR operation for any integer will always
+        give a number more than or equal to n. This is becase all the 
+        set bits can never be unset, only the unset bit can be set(caseing > n)
+    3. Same doesnt apply for bitwise-XOR.
+    4. Minimum AND result within a sub-array is that off the whole array.
+    5. Maximum AND result within a sub-array is that off the max element.
+
+
+    
