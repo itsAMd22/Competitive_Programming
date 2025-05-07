@@ -9,6 +9,7 @@ using namespace std;
 #define pv(v) for(auto e : v)   cout << e << " ";   cout << endl;
 #define pm(m) for(auto [x,y] : m)   cout << x << " " << y << endl;   cout << endl;
 
+//common strategy while working with subarrays.
 
 //Given an array of n integers, find the sum of ai x aj for all 1 <= i,j <= n
 void solve(){
@@ -43,9 +44,51 @@ void solve2(){
     cout << ans << endl;
 }
 
+//count subarrays such that their sum is divisible by k.
+int psum1[1000000];
+map<int,int>tr;
+
+void solve3(){
+    int n, k;  cin >> n >> k;
+    int a[n+1];
+    for(int i=1;i<=n;i++){
+        cin >> a[i];
+        psum1[i] = psum1[i-1] + a[i];
+    }   
+    int ct = 0;
+    tr[0] = 1;
+    for(int i=1;i<=n;i++){
+        int red = (((psum1[i] % k) + k) % k);
+        ct += tr[red];
+        tr[red]++;
+    }
+    cout << ct << endl;
+}
+
+
+
+//count subarrays such that their XOR is equal to 0.
+int pxor[1000000];
+map<int,int>tr1;
+
+void solve4(){
+    int n;  cin >> n;
+    int a[n+1];
+    for(int i=1;i<=n;i++){
+        cin >> a[i];
+        pxor[i] = pxor[i-1] ^ a[i];
+    }   
+    int ct = 0;
+    tr1[0] = 1;
+    for(int i=1;i<=n;i++){
+        int red = pxor[i];
+        ct += tr1[red];
+        tr1[red]++;
+    }
+    cout << ct << endl;
+}
+
 int main(){
     Alhamdulillah
-    int t=1;    cin >> t;
-    while(t--)  solve(), solve2();
     return 0;
 }
