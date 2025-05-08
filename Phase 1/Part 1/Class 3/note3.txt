@@ -43,7 +43,8 @@
     *** long long double is more precise than double and takes 16 bytes in memory and can  represent a 
     number up to 10 digits after decimal point, but at the cost of being 2x slower than double.
     
-    *** setprecision(n) print n digits, including the ones left of the decimal point.
+    *** setprecision(n) prints n digits, including the ones left of the decimal point.
+    *** fixed << setprecision(n) prints n digits, after the decimal point.
 
 
 
