@@ -21,5 +21,30 @@
     4. Minimum AND result within a sub-array is that off the whole array.
     5. Maximum AND result within a sub-array is that off the max element.
 
+# Precision related issues: 
+    1. (int)pow(a,b)   double when a and b are integers might cause problems.
+    Better approach : round(pow(a,b)), returns the nearest inteher 
+                      so it will be more accurate.
+
+    2. (int)log2(n) when n is an integer >= 1, return double, might be inaccurate.
+    Better approach : 1/ __lg(n), O(1) and accurate.
+                      2/ int ans = 0; while(n>1) {ans++; n/=2;}, O(log n) but accurate.
+
+    3. (int)sqrt(n) when n is an integer >= 1, returns double value, might be inaccurate.
+    Better appraoch : 1/ int ans = 0; while((ans+1)*(ans+1) <= n) ans++; O(sqrt(n)) but accurate.
+                      2/ int ans = sqrt(n);//sqrtl(n) while(ans*ans<=n) ++ans; while(ans * ans > n) --ans;
+                      O(1) and accutate.
+
+    4. if(a == b) when a and b are double values.
+        Due to precision issues, they might not be the same according to the computer.
+        Better approach : if(abs(a-b) < 1e-9), abs returns the absolute value of a number.
+                          1e-1 is a very small number, so the difference being below it can be neglected.
+    
+    *** long long double is more precise than double and takes 16 bytes in memory and can  represent a 
+    number up to 10 digits after decimal point, but at the cost of being 2x slower than double.
+    
+    *** setprecision(n) print n digits, including the ones left of the decimal point.
+
+
 
     
