@@ -44,8 +44,20 @@
     number up to 10 digits after decimal point, but at the cost of being 2x slower than double.
     
     *** setprecision(n) prints n digits, including the ones left of the decimal point.
-    *** fixed << setprecision(n) prints n digits, after the decimal point.
+    *** fixed << setprecision(n) prints n digits, after the  decimal point.
+    It also helps avoiding scientific notations.
+
+    # Memory Initialization : 
+        -> Array declared locally is initialized to garbage value by default.
+        -> Array declaed globally in initiazied to 0 be default.
+
+        -> memset/fill function is used to initialize a continuous block of memory
+            regardless how its declared.
+        
+    *** memset works per bytes(8 bits), O(n) but faster than loop.
+    *** memset(destination, value_to_assigned, amount_of_memory(starting from destination's initial address))
+    *** memset works byte-by-byte.
 
 
-
+    ***fill(a, a+sz, value) can be used to initialize with any value of users choice.
     
