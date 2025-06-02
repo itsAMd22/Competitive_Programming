@@ -9,27 +9,19 @@ using namespace std;
 #define pv(v) for(auto e : v)   cout << e << " ";   cout << endl;
 #define pm(m) for(auto [x,y] : m)   cout << x << " " << y << endl;   cout << endl;
 
-ll xor_zero_to_x(ll x){
-    ll ans = 0;
-    while(x >= 0 && x % 4 != 3)   ans ^= x--; 
-    //x%4 == 3 marks the end of a 4-element block.
-    //because starting from 0, XOR for a block of 4 consecutive elements = 0
-    return ans;
-}
-
-ll l_to_r_xor(ll l, ll r){
-    return xor_zero_to_x(r) ^ (l > 0 ? xor_zero_to_x(l-1) : 0); //prefix xor format
-}
-
 void solve(){
-    ll l,r,ans = 0;    cin >> l >> r;
-    ans  = l_to_r_xor(l,r);
-    cout << ans;
+    int n;
+    string num; 
+    cin >> n >> num;
+    string tmp = num;
+    if(next_permutation(num.begin(), num.end()))    cout << n << " " << num << endl;
+    else cout << n << " BIGGEST" << endl;
+    
 }
 
 int main(){
     Alhamdulillah
-    int t=1;    //cin >> t;
+    int t=1;    cin >> t;
     while(t--)  solve();
     return 0;
 }
