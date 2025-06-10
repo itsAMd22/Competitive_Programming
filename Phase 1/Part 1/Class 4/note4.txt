@@ -18,3 +18,16 @@
                 -> Must be initialized at the time of declaration.
                 -> Cannot be reassigned to a different varaible.
                 -> Works as an alternative name for that variable throughout its scope.
+
+
+### Pair : A simple container template from the C++ STL that allows you to store two elements of different 
+           data types together as a single unit.
+   -> Declaration : pair<dtype1, dtype2> pair_name
+   -> Initialization : pair<dtype1, dtype2> p1 = make_pair(x,y) / {x,y} / p1{x,y} / p1({x,y})
+   -> Accession : first and second keyword / auto [x,y] = p1 / tie(e1, e2) = p1
+   -> Two pairs can be swapped.
+
+### Tuple : A container template the allows to store a fixed-sized collection of elements of different data types.
+   -> Declaration : tuple<dtype1, dtype2, ...... , dtypeN> tuple_name
+   -> Initialization : tuple<dtype1, dtype2, ..... , dtypeN> t1 = make_tuple(x1,x2,....,xN)
+   -> Accession : structured binding - auto[e1,e2,....,eN] = t1
