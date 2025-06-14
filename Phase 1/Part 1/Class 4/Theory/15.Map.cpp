@@ -18,6 +18,7 @@ struct custom_hash {
 };
 
 unordered_map<long long int, int, custom_hash> mp; 
+
 // this will work in O(n) when the key is an int or long long int
 
 //stores data in key-value pairs.
