@@ -4,20 +4,28 @@ using namespace std;
 struct Stack {
     vector<int> vst;
 
-    void push(int e){
+    void push(int e){ //O(1)
         vst.push_back(e);
     }
 
-    void pop(){
+    void pop(){ //O(1)
         if(vst.empty()) cout << "stack is empty!\n";
         else    vst.pop_back();
     }
 
-    int top(){
+    int top(){ //O(1)
         if(vst.empty()){
             cout << "stack is empty!\n";
             return -1;
         }else   return vst.back();
+    }
+
+    int size(){
+        return vst.size();
+    }
+
+    bool empty(){
+        return vst.empty();
     }
 };
 
