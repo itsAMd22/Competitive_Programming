@@ -5,11 +5,10 @@ const int N = 1e5+6;
 int a[N];
 
 struct Queue{
-    int start = 0, end = 0;
+    int start = 1, end = 0;
     
     void push(int e){
-        a[end] = e;
-        end++;
+        a[++end] = e;
     }
 
     void pop(){
@@ -30,7 +29,7 @@ struct Queue{
         if(start > end){
             cout << "Queue is empty\n";
             return -11111;
-        }else   return a[end-1];
+        }else   return a[end];
     }
 
     int size(){
