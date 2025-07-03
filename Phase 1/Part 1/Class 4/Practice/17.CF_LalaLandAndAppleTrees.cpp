@@ -9,14 +9,16 @@ int main(){
         mp[pos] = apl;
         neg += (pos < 1);
     }
-
-
+    
     pst = n-neg;
+    
     if(pst == neg){
+        //all possible
         for(auto [x,y] : mp)    ans += y;
         cout << ans;
     }else if(pst > neg){
         int cnt = 2 * neg + 1; 
+        //first cnt trees possible
         auto it = mp.begin();
         while(cnt--){
             ans += (it->second);
@@ -24,7 +26,8 @@ int main(){
         }
         cout << ans;
     }else{
-        int cnt = 2 * pst + 1; 
+        cnt = 2 * pst + 1; 
+        //last cnt trees possible
         auto it = prev(mp.end());
         while(cnt--){
             ans += (it->second);
