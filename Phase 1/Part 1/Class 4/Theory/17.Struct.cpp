@@ -3,7 +3,7 @@ using namespace std;
 
 
 //structure is a user-defined data type in c/c++. It creates a data type that 
-//can be used to froup items of possibly different types into a single type.
+//can be used to group items of possibly different types into a single type.
 
 
 struct Address{
